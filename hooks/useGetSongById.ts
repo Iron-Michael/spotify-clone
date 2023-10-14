@@ -1,6 +1,5 @@
 import { Song } from "@/types";
 import { useSessionContext } from "@supabase/auth-helpers-react";
-import { supabase } from "@supabase/auth-ui-shared";
 import { useEffect, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 

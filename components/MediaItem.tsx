@@ -4,18 +4,26 @@ import Image from "next/image";
 
 import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/types";
+import usePlayer from "@/hooks/usePlayer";
 
 interface MediaItemProps {
   data: Song;
   onClick?: (id: string) => void;
 }
 
-const MediaItem: React.FC<MediaItemProps> = ({ data }) => {
+const MediaItem: React.FC<MediaItemProps> = ({ data, onClick }) => {
   const imageUrl = useLoadImage(data);
+  const player = usePlayer();
+  const handleClick = () => {
+    if (onClick) {
+      return onClick(data.id);
+    }
 
+    return player.setId(data.id);
+  };
   return (
     <div
-      onClick={() => {}}
+      onClick={handleClick}
       className="
         flex 
         items-center 

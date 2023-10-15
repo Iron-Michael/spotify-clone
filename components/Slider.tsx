@@ -36,7 +36,8 @@ const Slider: React.FC<SlideProps> = ({ value = 1, onChange }) => {
           relative 
           grow 
           rounded-full 
-          h-[3px]
+          h-[10px]
+          cursor-pointer
         "
       >
         <RadixSlider.Range
@@ -45,6 +46,7 @@ const Slider: React.FC<SlideProps> = ({ value = 1, onChange }) => {
             bg-white 
             rounded-full 
             h-full
+             cursor-pointer
           "
         />
       </RadixSlider.Track>

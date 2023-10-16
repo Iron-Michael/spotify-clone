@@ -17,8 +17,7 @@ export async function POST() {
     } = await supabase.auth.getUser();
 
     if (!user) throw Error("Could not get user");
-    const customer = await createOrRetrieveCustomer;
-    ({
+    const customer = await createOrRetrieveCustomer({
       uuid: user.id || "",
       email: user.email || "",
     });
